@@ -3,7 +3,7 @@ services:
     name: label-studio-eval
     env: docker
     plan: free
-    repo: https://github.com/YOUR_USERNAME/llm_evaluation
+    repo: https://github.com/MadhuhaasG/llm_evaluation
     branch: main
     dockerfilePath: Dockerfile
     autoDeploy: true
@@ -12,3 +12,6 @@ services:
         value: 0.0.0.0
       - key: LABEL_STUDIO_PORT
         value: 8080
+    ports:
+      - port: 8080
+        protocol: http
