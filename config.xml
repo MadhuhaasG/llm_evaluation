@@ -1,0 +1,75 @@
+<View>
+  <View style="display: flex; flex-direction: column; margin-bottom: 15px;">
+    <Header value="Question:" style="font-size: 16px; font-weight: bold; margin-bottom: 5px;"/>
+    <Text name="question" value="$question" style="white-space: pre-wrap; font-size: 16px; padding: 10px; background-color: #f5f5f5; border-radius: 5px;"/>
+  </View>
+  
+  <View style="display: flex; flex-direction: column; margin-bottom: 20px;">
+    <Header value="Reference:" style="font-size: 16px; font-weight: bold; margin-bottom: 5px;"/>
+    <Text name="reference" value="$reference" style="white-space: pre-wrap; font-size: 16px; padding: 10px; background-color: #E0E0E0; border-radius: 5px; box-shadow: 2px 2px 5px #999;"/>
+  </View>
+  
+  <View>
+    <Header value="Rank the model responses by quality (drag to reorder)" style="font-size: 16px; font-weight: bold; margin-bottom: 15px;"/>
+    <List name="answers" value="$items" titleKey="title" textKey="body" displayMode="single"/>
+    <Style>
+      .htx-ranker-column {
+        background: #f8f8f8;
+        width: 100%;
+        padding: 20px;
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+      }
+  
+      .htx-ranker-item {
+        background: #e0e0e0;
+        color: #333;
+        font-size: 16px;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+      }
+      
+      /* Make the model response text readable */
+      .htx-ranker-item .htx-label-text {
+        white-space: pre-wrap;
+      }
+
+      /* Hide any remaining model identifiers */
+      .htx-ranker-item .item-id {
+        display: none;
+      }
+    </Style>
+    <Ranker name="rank" toName="answers" />
+  </View>
+</View>
+<!-- { 
+    "data": {
+        "question": "What is machine learning?",
+        "reference": "Machine learning is a subset of artificial intelligence...",
+        "items": [
+            {
+                "title": "Model A",
+                "body": "Example response from Model A",
+                "id": "model_a"
+            },
+            {
+                "title": "Model B",
+                "body": "Example response from Model B",
+                "id": "model_b"
+            },
+            {
+                "title": "Model C",
+                "body": "Example response from Model C",
+                "id": "model_c"
+            },
+            {
+                "title": "Model D",
+                "body": "Example response from Model D",
+                "id": "model_d"
+            }
+        ]
+    }
+} -->

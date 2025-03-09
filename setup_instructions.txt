@@ -1,0 +1,44 @@
+# Quick Setup Instructions for Label Studio Deployment
+
+## Step 1: Create GitHub Repository
+1. Go to: https://github.com/new
+2. Repository name: label-studio-deploy
+3. Description: Label Studio deployment for LLM evaluation
+4. Choose "Public" repository
+5. Click "Create repository"
+
+## Step 2: Upload Files
+Option A: Use GitHub website
+1. Click "uploading an existing file"
+2. Drag and drop all files from this folder
+3. Commit changes
+
+Option B: Use Git command line
+```
+cd C:\Users\madhu\CascadeProjects\label-studio-deploy
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/label-studio-deploy.git
+git push -u origin main
+```
+
+## Step 3: Deploy on Render.com
+1. Go to: https://render.com/
+2. Sign up (free) or log in
+3. Click "New +" → "Web Service"
+4. Connect your GitHub account
+5. Select your label-studio-deploy repository
+6. Configure as:
+   - Name: label-studio-eval
+   - Environment: Docker
+   - Branch: main
+   - Plan: Free
+7. Click "Create Web Service"
+
+## Step 4: Share with Evaluator
+Once deployed (5-10 minutes), you'll get a URL like:
+https://label-studio-eval.onrender.com
+
+Send this to your evaluator with instructions from the README.md
